@@ -497,3 +497,214 @@
 // substring(string, 'a');     // "hello world"
 // substring(string, 8, 20);   // "rld"
 // substring(string, 5, 5);   // ""
+
+// function rot13(message) {
+//   let codedMessage = '';
+//   const CYPHER_OFFSET = 13;
+  
+//   for (let index = 0; index < message.length; index++) {
+//     let char = message[index];
+//     let ascii = char.charCodeAt(0);
+    
+//     if ((char >= 'a' && char <= 'm') || (char >= 'A' && char <= 'M')) {
+//       ascii += CYPHER_OFFSET;
+//     } else if ((char >= 'n' && char <= 'z') || (char >= 'N' && char <= 'Z')) {
+//       ascii -= CYPHER_OFFSET;
+//     }
+    
+//     codedMessage += String.fromCharCode(ascii);
+//   }
+  
+//   return codedMessage;
+// }
+
+// console.log(rot13('Teachers open the door, but you must enter by yourself.'));
+// console.log(rot13(''));
+// console.log(rot13('788'));
+// console.log(rot13('   '));
+// console.log(rot13(rot13('Teachers open the door, but you must enter by yourself.')));
+
+// function stringToInteger(stringNum) {
+//   let multiple;
+//   stringNum[0] === '-' ? multiple = -1 : multiple = 1;
+
+//   let num = 0;
+  
+//   for (let i = stringNum.length - 1; i >= 0; i--) {
+//     if (stringNum[i] === '-' || stringNum[i] === '+') {
+//       break;
+//     }
+    
+//     num += stringNum[i] * multiple;
+//     multiple *= 10;
+//   }
+  
+//   console.log(num);
+// }
+
+// stringToInteger('4321');      // 4321
+// stringToInteger('570');       // 570
+// stringToInteger('4321');      // 4321
+// stringToInteger('-570');      // -570
+// stringToInteger('+100');      // 100
+
+// function integerToString(int) {
+  
+//   let newArr = [];
+//   let divisor = 10;
+  
+//   do {
+//     newArr.unshift(int % divisor);
+//     int = Math.floor(int / divisor);
+//   } while (int > 0);
+  
+//   return newArr.join('');
+// }
+
+// function signedIntegerToString(int) {
+//   if (int === 0) {
+//     return '0';
+//   } else if (int > 0){
+//     return "+" + integerToString(int);
+//   } else {
+//     return "-" + integerToString(int * -1);
+//   }
+// }
+
+// integerToString(4321);      // "4321"
+// integerToString(0);         // "0"
+// integerToString(5000);      // "5000"
+// console.log(signedIntegerToString(4321));      // "+4321"
+// console.log(signedIntegerToString(-123));      // "-123"
+// console.log(signedIntegerToString(0));         // "0"
+// function d(i) {
+//   console.log(i);
+// }
+// d((false && undefined));
+// d((false || undefined));
+// d(((false && undefined) || (false || undefined)));
+// d(((false || undefined) || (false && undefined)));
+// d(((false && undefined) && (false || undefined)));
+// d(((false || undefined) && (false && undefined)));
+// d(('a' || (false && undefined) || ''));
+// d(((false && undefined) || 'a' || ''));
+// d(('a' && (false || undefined) && ''));
+// d(((false || undefined) && 'a' && ''));
+// function padLeft(number) {
+//   const stringNumber = String(number);
+//   switch (stringNumber.length) {
+//     case 1:  return `  ${stringNumber}`;
+//     case 2:  return ` ${stringNumber}`;
+//     default: return stringNumber;
+//   }
+// }
+
+// for (let i = 1; i < 10; i += 1) {
+//   let row = '';
+//   for (let j = 1; j <= 10; j += 1) {
+//     row += `${padLeft(i * j)} `;
+//   }
+
+//   console.log(row);
+// }
+
+// var counter = 5;
+// var rate = 3;
+// console.log('The total value is ' + String(counter * rate));
+
+// function counter(count) {
+//   // ...
+// }
+
+// function counter(count) {
+//   // ...
+// }
+
+// console.log('The total value is ' + String(counter * rate));
+
+// var counter = 5;
+// var rate = 3;
+
+// var counter = 5;
+// var rate = 3;
+
+// function counter(count) {
+//   // ...
+// }
+
+// console.log('The total value is ' + String(counter * rate));
+
+// let counter = 5;
+// let rate = 3;
+
+// function counter(count) {
+//   // ...
+// }
+
+// console.log('The total value is ' + String(counter * rate));
+
+// function invoiceTotal(...items) {
+//   let sum = 0;
+//   items.forEach((num) => {
+//     sum += num;
+//   });
+//   return sum;
+// }
+
+// console.log(invoiceTotal(20, 30, 40, 50));          // works as expected
+// console.log(invoiceTotal(20, 30, 40, 50, 40, 40));  // does not work; how can you make it work?
+
+// let startingBalance = 1;
+// const chicken = 5;
+// const chickenQuantity = 7;
+
+// function totalPayable(item, quantity) {
+//   return startingBalance + (item * quantity);
+// }
+
+// startingBalance = 5;
+// console.log(totalPayable(chicken, chickenQuantity));
+
+// startingBalance = 10;
+// console.log(totalPayable(chicken, chickenQuantity));
+
+// function makeDoubler(caller) {
+//   return function double(num) {
+//     console.log(`this function was called by ${caller}.`);
+//     return num + num;
+//   }
+// }
+
+// const doubler = makeDoubler('Victor');
+// doubler(5);                             // returns 10
+// // logs:
+// // This function was called by Victor.
+
+// const array = ['Apples', 'Peaches', 'Grapes'];
+
+// array[3.4] = 'Oranges';
+// console.log(array.length);
+// console.log(Object.keys(array).length);
+
+// array[-2] = 'Watermelon';
+// console.log(array.length);
+// console.log(Object.keys(array).length);
+
+const languages = ['JavaScript', 'Ruby', 'Python'];
+console.log(languages);
+console.log(languages.length);
+
+languages.length = 4;
+console.log(languages);
+console.log(languages.length);
+
+
+languages.length = 3;
+console.log(languages);
+console.log(languages.length);
+
+languages.length = 1;
+languages[2] = 'Python';
+console.log(languages);
+console.log(languages[1]);
+console.log(languages.length);
